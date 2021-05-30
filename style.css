@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    background: black;
+    color: #2a9d8f;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sn{
+    position: relative;
+    font-size: 20vmin;
+    font-family: 'Staatliches', sans-serif;
+    text-transform: uppercase;
+    font-display: swap;
+    text-shadow: 0 0 10px #2a9d8f;
+}
+
+.sn__row{
+    display: block;
+}
+
+.sn__row:nth-child(1){
+    clip-path:  polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+}
+
+.sn__row:nth-child(2){
+    clip-path:  polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+}
+
+.sn__row:nth-child(3){
+    clip-path:  polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+}
+
+.sn__row:nth-child(4){
+    clip-path:  polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+}
+
+.sn__row.sn__row--sibling{
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    width: 800px;
+}
+
+.sn__text{
+    display: block;
+    transform-origin: bottom left;
+    animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite;
+}
+
+.sn__row:nth-child(1) .sn__text{
+    transform: translateY(-0.1em);
+}
+
+.sn__row:nth-child(2) .sn__text{
+    transform: translateY(-0.3em) scaleY(1.1);
+}
+
+.sn__row:nth-child(3) .sn__text{
+    transform: translateY(-0.5em) scaleY(1.2);
+}
+
+.sn__row:nth-child(4) .sn__text{
+    transform: translateY(-0.7em) scaleY(1.3);
+}
+
+.sn__row:nth-child(5) .sn__text{
+    transform: translateY(-0.9em) scaleY(1.4);
+}
+
+.sn__row:nth-child(6) .sn__text{
+    transform: translateY(-1.1em) scaleY(1.5);
+}
+
+@keyframes moveIn{
+    50%, 100%{
+        transform: translateY(0em);
+    }
+    0%{
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+}
+
+.debug .sn__row:nth-child(even){
+    color: black;
+    background: white;
+}
+
+.debug .sn__row:nth-child(odd){
+    color: white;
+    background: black;
+}
